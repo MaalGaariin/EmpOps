@@ -1,0 +1,137 @@
+/* responsive.css */
+
+/* Add your existing styles here for desktop */
+
+/* Media query for small devices */
+@media only screen and (max-width: 767px) {
+    body {
+      font-size: 14px; /* Adjust the font size for better readability on small screens */
+    }
+  
+    .empops-parent {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .about-us-parent {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+  
+    .logo-and-text-frame {
+      width: 100%;
+    }
+  
+    .frame-parent,
+    .header-frame,
+    .frame-container,
+    .macbook-1-child,
+    .macbook-1-inner1,
+    .ellipse-parent {
+      padding: 10px;
+    }
+  
+    .empower-text,
+    .empops-group,
+    .empower-manage-optimize,
+    .go-to-solution-for-seamless-em-parent,
+    .macbook-1-inner,
+    .frame-group,
+    .k-users-parent,
+    .k-users,
+    .offices,
+    .frame-parent4,
+    .frame-parent5,
+    .m,
+    .line,
+    .ellipse-parent {
+      width: 100%;
+    }
+  
+    .rectangle-parent,
+    .rectangle-group,
+    .frame-parent1,
+    .frame-parent2,
+    .rectangle-parent1,
+    .frame-parent3,
+    .rectangle-parent2,
+    .contact-us1 {
+      width: 80%;
+      margin: 10px auto;
+    }
+  
+    .rectangle-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .current-emp-frame,
+    .contact-us1 {
+      margin-top: 20px;
+    }
+  
+    .frame-child,
+    .frame-child1,
+    .frame-child2,
+    .frame-child3,
+    .frame-child4,
+    .frame-child5,
+    .frame-child6,
+    .frame-child7,
+    .wrapper-logo1-6-224747-1 {
+      width: 100%;
+    }
+  
+    /* .logo1-30-0290-1-icon {
+      width: 80px; 
+      height: 80px;
+      border-radius: 50%; 
+    } */
+  
+    .logo1-6-224747-1-icon {
+      width: 50px; /* Adjust the width of the logo with a rectangular shape */
+      height: auto;
+    }
+
+    h1.empower-manage-optimize {
+        margin-bottom: 20px;
+    }
+
+    .frame-parent2 {
+        visibility: hidden;
+    }
+
+    h3.empops {
+        color: white;
+    }
+
+    h1.empops1{
+        text-align: center;
+    }
+
+    .rectangle-container {
+        right: -50px;
+    }
+
+    button.rectangle-parent {
+        margin-bottom: 55px;
+    }
+
+    .rectangle-frames {
+        text-align: center;
+    }
+
+    
+  .rectangle-container {
+    right: 0; /* Centering .rectangle-container */
+  }
+
+  button.rectangle-parent {
+    margin-bottom: 20px; /* Adjusted margin for button.rectangle-parent */
+  }
+
+    /* Add more styles for other elements as needed */
+  }
+  

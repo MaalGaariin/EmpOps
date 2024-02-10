@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ccccff;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #333; 
+    text-align: center;
+}
+
+/* Style for the container holding the form */
+.container {
+    width: 80%;
+    max-width: 600px; 
+    margin: 20px auto;
+    background-color: #88f; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1); 
+}
+
+/* Style for labels */
+label {
+    font-weight: bold;
+    color: #333; 
+}
+
+/* Style for input fields and select dropdowns */
+input[type="text"],
+input[type="date"],
+input[type="time"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+/* Style for the submit button */
+.submit {
+    background-color: #4caf50; 
+    color: #fff;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 16px;
+    display: block; 
+    margin-top: 20px;
+}
+
+.submit:hover {
+    border: 1px solid #00f;
+    background-color: #45a049; 
+}
+
+/* Style for the date selection section */
+#date-selection {
+    margin-top: 20px;
+    width: fit-content; 
+    margin-left: auto; 
+    margin-right: auto; 
+    text-align: center; 
+}
+
+/* Style for labels within date selection */
+#date-selection label {
+    margin-right: 10px; 
+    color: #333; 
+}
+
+/* Style for date input within date selection */
+#date-selection input[type="date"] {
+    padding: 8px; 
+    margin: 8px 10px;
+    border: 1px solid #333;
+    border-radius: 4px;
+}
+
+/* Style for the button within date selection */
+#date-selection button {
+    padding: 8px 20px; 
+    margin: 8px; 
+    border: 1px solid #00f;
+    background-color: transparent; 
+    color: #00f; 
+    border-radius: 4px; 
+    cursor: pointer; 
+}
+
+/* Style for the button within date selection on hover */
+#date-selection button:hover {
+    background-color: #00d; 
+    color: #fff; 
+}
+
+/* Style for the attendance table */
+#attendance-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background-color: #f5f5ff; 
+    border-radius: 8px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+/* Style for table headers */
+#attendance-table th {
+    padding: 12px;
+    border-bottom: 2px solid #ddd; 
+    background-color: #6670dd;
+    color: #fff;
+    text-align: left;
+}
+
+/* Style for table cells */
+#attendance-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    background-color: #e8eaf6;
+    color: #333;
+}
+
+/* Style for even rows */
+#attendance-table tbody tr:nth-child(even) {
+    background-color: #f0f2fa;
+}
+
+/* Style for odd rows */
+#attendance-table tbody tr:nth-child(odd) {
+    background-color: #e8eaf6;
+}
+
+/* Hover effect for rows */
+#attendance-table tbody tr:hover {
+    background-color: #ccd4ff;
+}
+
+/* Media query for responsive design */
+@media screen and (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
+    
+    input[type="text"],
+    input[type="date"],
+    input[type="time"],
+    select {
+        padding: 8px;
+        font-size: 14px;
+    }
+    
+    .submit {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
