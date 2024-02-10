@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Attendance</title>
+    <link rel="stylesheet" href="attendance_styles.css">
+</head>
+
+<body>
+    <h1>Employee Attendance</h1>
+
+    <div id="attendance-form">
+        <div class="container">
+            <label for="employee-id">Employee ID:</label>
+            <input type="text" id="employee-id" name="employee-id" required>
+            <br>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+            <br>
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required>
+            <br>
+            
+            <div class="location">
+                <label for="location">Location:</label>
+                <select id="location" name="location" required>
+                    <option value="remote">Remote/Home</option>
+                    <option value="office">Office/On-site</option>
+                </select>
+            </div>
+            <br>
+
+            <div class="status">
+                <label for="status">Status:</label>
+                <select id="status" name="status" required>
+                    <option value="present">Present</option>
+                    <option value="late">Late</option>
+                    <option value="absent">Absent</option>
+                    <option value="half-day">Half-day</option>
+                    <option value="leave">Leave</option>
+                </select>
+            </div>
+            <button class="submit" type="submit">Submit Attendance</button>
+        </div>
+    </div>
+
+    <div id="date-selection">
+        <label for="view-date">View Attendance for Date:</label>
+        <input type="date" id="view-date" name="view-date">
+        <button type="button">View Attendance</button>
+    </div>
+
+    <h2>Attendance Records</h2>
+    <table id="attendance-table">
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Location</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="attendance-data">
+            <!-- Attendance will be loaded here -->
+        </tbody>
+    </table>
+
+    <script src="attendance_script.js"></script>
+</body>
+
+</html>
