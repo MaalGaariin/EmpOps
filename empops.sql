@@ -89,9 +89,9 @@ CREATE TABLE `document` (
 --
 
 INSERT INTO `document` (`id`, `name`, `date`, `size`, `link`) VALUES
-(2, 'google policy', '05 Jan 2019', '25 MB', 'https://www.google.com/googgleleave.pdf'),
-(9, 'g', '31/01/2024', '20 MB', 'www.ppp.com.pdf'),
-(10, 'g', '31/01/2024', '20 MB', 'www.ppp.com.pdf');
+(2, 'google policy', '05 Jan 2019', '25 MB', 'https://www.google.com/googgleleave'),
+(9, 'g', '31/01/2024', '20 MB', 'www.ppp.com'),
+(10, 'g', '31/01/2024', '20 MB', 'www.ppp.com');
 
 -- --------------------------------------------------------
 
@@ -126,8 +126,8 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`name`, `id`, `nationality`, `birth`, `gender`, `blood`, `password`, `status`, `phone`, `phone2`, `email`, `linkedin`, `web`, `start`, `visa`, `team`, `file_name`, `salary`, `job`) VALUES
-('kidanewold hailu', '1', 'Ethiopian', '09/02/2024', 'male', 'o', '123456789', 1, 961147131, 961147131, 'kidanewldhailu@gmail.com', 'linkedin/kidanewold', 'www.empops.com', '10/01/2024', '10/01/2024', 'Cyber', 'design_for_valentines_day_t_shirts_design-removebg-preview (1).png', 16000, 'entry'),
-('Gemechis', '2', 'Et', '12/12/2022', 'M', 'O', '12345678', 1, 090000000, 0, 'No@gmail.com', 'linkedIn/No', 'noweb.com', '11/11/2023', '12/11/2024', 'DataBase', 'img-2.jpg', 50000, 'senior');
+('kidanewold hailu', '1', 'Ethiopian', '09/02/2024', 'male', 'o', '1', 1, 961147131, 961147131, 'kidanewldhailu@gmail.com', 'linkedin/kidanewold', 'www.empops.com', '10/01/2024', '10/01/2024', 'Cyber', 'design_for_valentines_day_t_shirts_design-removebg-preview (1).png', 16000, 'entry'),
+('ha', '2', '', '', '', '', '', 1, 0, 0, 'No', 'No', '', '', '', 'Cyber', 'a', 0, '');
 
 -- --------------------------------------------------------
 
@@ -146,8 +146,8 @@ CREATE TABLE `le` (
 --
 
 INSERT INTO `le` (`date`, `id`, `reason`) VALUES
-('20 02 2024', 34, '1'),
-('20 02 2024', 44, 'gsgsgs\r\nsjsjs\r\nsmm s'),
+('20 02 2024', 1, '1'),
+('20 02 2024', 2, 'gsgsgs\r\nsjsjs\r\nsmm s'),
 ('20 02 2024', 1572922, 'a ba<br />\r\nlala<br />\r\nka');
 
 -- --------------------------------------------------------
@@ -168,7 +168,50 @@ CREATE TABLE `team` (
 
 INSERT INTO `team` (`name`, `leader`, `id`) VALUES
 ('PHP', '1', 1),
-('DataBase', '2', 2);
+('Database', '1', 2);
+
+
+
+-- Create table structure for attendance
+CREATE TABLE `attendance` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `employee_id` int(10) unsigned NOT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  `location` enum('remote', 'office') NOT NULL,
+  `status` enum('present', 'late', 'absent', 'half-day', 'leave') NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Insert dummy attendance data for employee with ID 2
+INSERT INTO `attendance` (`employee_id`, `date`, `time`, `location`, `status`) VALUES
+(2, '2024-02-15', '08:00:00', 'office', 'present'),
+(2, '2024-02-14', '09:30:00', 'remote', 'present'),
+(2, '2024-02-13', '10:00:00', 'office', 'absent');
+
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `announcement`
+--
+
+CREATE TABLE `announcement` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `file` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `announcement`
+--
+
+INSERT INTO `announcement` (`title`, `content`, `file`) VALUES
+('Sample Announcement 1', 'This is the content of the first announcement.', 'sample_image1.jpg'),
+('Sample Announcement 2', 'This is the content of the second announcement.', 'sample_image2.jpg');
 
 --
 -- Indexes for dumped tables

@@ -60,6 +60,12 @@ if(isset($_POST['upload'])){
 		mysqli_query($conn,$insert) or die(mysqli_error($conn));
 	header('location:company-admin.php');
 }
+if(isset($delete_announce)){
+	$id_announce=$_POST['id-'];
+	$delete="DELETE FROM announcement'";
+	mysqli_query($conn,$delete);
+	header('location:announce-admin.php');
+}
 if(isset($_POST['delete'])){
 	$id=$_POST['id'];
 	$delete="DELETE FROM document WHERE id ='$id'";
@@ -239,11 +245,5 @@ if (isset($_POST['announce'])) {
         echo "Error with file upload.";
     }
     header('location:admin-dashboard.php');
-}
-if(isset($_POST['delete'])){
-	$title=$_POST['title'];
-	$delete="DELETE FROM announcement WHERE title='$title'";
-	mysqli_query($conn,$delete);
-header('location:announce.php');
 }
 ?>
