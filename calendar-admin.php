@@ -199,3 +199,4 @@ echo '<!DOCTYPE html>
 		<script src="assets/js/script.js"></script>
 		
 	</body>';
+?>

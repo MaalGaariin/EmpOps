@@ -1,4 +1,5 @@
 <?php
+require 'side_employee.php';
 require 'assets/conn.php';
 $id=$_SESSION['emp_id'];
 $select="SELECT * FROM employee WHERE id ='$id'";
@@ -13,7 +14,7 @@ session_destroy();
 $emp="SELECT * FROM employee";
 $emp_query=mysqli_query($conn,$emp) or die(mysqli_error($conn));
 $total=mysqli_num_rows($emp_query);
-echo'<!DOCTYPE html>
+echo '<!DOCTYPE html>
 <html lang="en">
 	<head>
 	
@@ -48,11 +49,7 @@ echo'<!DOCTYPE html>
 		<title>Calendar Page</title>
 
 		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-		<script>
-		   $(function() {
-			  $("#includeHeader").load("header.html");
-		   });
-		</script>
+
 			
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
@@ -63,119 +60,14 @@ echo'<!DOCTYPE html>
 	</head>
 	<body>
 	<br><br>
-		<!-- Inner wrapper -->
-		<div class="inner-wrapper">
-				
-			<!-- Loader -->
-			<div id="loader-wrapper">
-				
-				<div class="loader">
-				  <div class="dot"></div>
-				  <div class="dot"></div>
-				  <div class="dot"></div>
-				  <div class="dot"></div>
-				  <div class="dot"></div>
-				</div>
+
+	<div class="col-xl-9 col-lg-8  col-md-12">
+		<div class="card ctm-border-radius shadow-sm grow">
+			<div class="card-body">
+				<div id="calendar"></div>
 			</div>
-
-			
-			<!-- Header -->
-			<div id="includeHeader"></div>
-			<!-- /Header -->
-
-			
-<div class="page-wrapper">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-xl-3 col-lg-4 col-md-12 theiaStickySidebar">
-							<aside class="sidebar sidebar-user">
-								<div class="row">
-								<div class="col-md-12">
-									<div class="card ctm-border-radius shadow-sm grow">
-										<div class="card-body py-4">
-											<div class="row">
-												<div class="col-md-12 mr-auto text-left">
-													<div class="custom-search input-group">
-														<div class="custom-breadcrumb">
-															<ol class="breadcrumb no-bg-color d-inline-block p-0 m-0 mb-2">
-																<li class="breadcrumb-item d-inline-block"><a href="employees-dashboard.php" class="text-dark">Home</a></li>
-																<li class="breadcrumb-item d-inline-block active">Dashboard</li>
-															</ol>
-															<h4 class="text-dark">Employees Dashboard</h4>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-								<div class="user-card card shadow-sm bg-white text-center ctm-border-radius grow">
-									<div class="user-info card-body">
-										<div class="user-avatar mb-4">
-											<img src="images/'.$row['file_name'].'" alt="User Avatar" class="img-fluid rounded-circle" width="100">
-										</div>
-										<div class="user-details">
-											<h4><b>Welcome '.$row['name'].'</b></h4>
-											<p>'.$_SESSION['emp_id'].'</p>
-										</div>
-									</div>
-								</div>
-								
-								<!-- Sidebar -->
-								<div class="sidebar-wrapper d-lg-block d-md-none d-none">
-									<div class="card ctm-border-radius shadow-sm border-none grow">
-										<div class="card-body">
-											<div class="row no-gutters">
-												<div class="col-6 align-items-center text-center">
-													<a href="employees-dashboard.php" class="text-white active p-4 first-slider-btn ctm-border-right ctm-border-left ctm-border-top"><span class="lnr lnr-home pr-0 pb-lg-2 font-23"></span><span class="">Dashboard</span></a>												
-												</div>
-												
-												<div class="col-6 align-items-center shadow-none text-center">												
-													<a href="company.php" class="text-dark p-4 ctm-border-right ctm-border-left"><span class="lnr lnr-apartment pr-0 pb-lg-2 font-23"></span><span class=""> EMPOPS Company</span></a>												
-												</div>
-												<div class="col-6 align-items-center shadow-none text-center">												
-													<a href="calander.php" class="text-dark p-4 ctm-border-right"><span class="lnr lnr-calendar-full pr-0 pb-lg-2 font-23"></span><span class="">Calendar</span></a>												
-												</div>
-												<div class="col-6 align-items-center shadow-none text-center">											
-													<a href="settings.php" class="text-dark p-4 last-slider-btn1 ctm-border-right ctm-border-left"><span class="lnr lnr-cog pr-0 pb-lg-2 font-23"></span><span class="">Settings</span></a>												
-												</div>
-												<div class="col-6 align-items-center shadow-none text-center">											
-													<a href="details.php" class="text-dark p-4 last-slider-btn ctm-border-right"><span class="lnr lnr-user pr-0 pb-lg-2 font-23"></span><span class="">Profile</span></a>												
-												</div>
-												<div class="col-6 align-items-center shadow-none text-center">				
-												<form method=post action"side_employee.php">
-													<button type="submit" name="logout" class="text-dark p-4 ctm-border-right ctm-border-left"><span class="lnr lnr-briefcase pr-0 pb-lg-2 font-23"></span><span class="">Log out</span></a>										</form>	
-													</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								
-								<!-- /Sidebar -->
-								<div class="card ctm-border-radius shadow-sm grow">
-
-								</div>
-							</aside>
-						</div>
-				
-						<div class="col-xl-9 col-lg-8  col-md-12">
-							
-							<div class="card ctm-border-radius shadow-sm grow">
-								<div class="card-body">
-									<div id="calendar"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!--/Content-->
-			
 		</div>
-		<!-- Inner Wrapper -->
-		
-		<div class="sidebar-overlay" id="sidebar_overlay"></div>
+	</div>
 		
 		<!-- Add Event Modal -->
 		<div id="add_event" class="modal fade" role="dialog">
@@ -273,6 +165,12 @@ echo'<!DOCTYPE html>
 		</div>
 		<!-- /Add Category Modal -->
 				
+
+		<!-- Inner Wrapper -->
+		
+  
+		<div class="sidebar-overlay" id="sidebar_overlay"></div>
+     
 		<!-- jQuery -->
 		<script src="assets/js/jquery-3.2.1.min.js"></script>
 		

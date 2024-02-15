@@ -333,7 +333,7 @@ echo'<!DOCTYPE html>
                                                     </a>                                                
                                                 </div>
                                                 <div class="col-6 align-items-center shadow-none text-center">                
-                                                    <a href="employee-logout.php" class="text-dark p-4 ctm-border-right ctm-border-left">
+                                                    <a href="side.php" class="text-dark p-4 ctm-border-right ctm-border-left">
                                                         <span class="lnr lnr-exit pr-0 pb-lg-2 font-23"></span><span class="">Log out</span>
                                                     </a>   
                                                 </div>
