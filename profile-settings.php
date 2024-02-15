@@ -1,4 +1,34 @@
 <?php
+echo'<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    
+    <!-- Linearicon Font -->
+    <link rel="stylesheet" href="assets/css/lnr-icon.css">
+        
+    <!-- Fontawesome CSS -->
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <title>Profle Settings</title>
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.min.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+    
+  </head>
+  <body>';
 require 'side.php';
 $slug=$_GET['id'];
 $emp="SELECT * FROM employee WHERE id='$slug'";

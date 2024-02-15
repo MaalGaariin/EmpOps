@@ -43,7 +43,7 @@ echo '<!DOCTYPE html>
 		<!-- Custom CSS -->
 		<link rel="stylesheet" href="assets/css/style.css">
 		
-		<title>Side Page</title>
+		<title>Admin Page</title>
 
 		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

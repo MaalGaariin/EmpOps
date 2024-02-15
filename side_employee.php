@@ -44,7 +44,7 @@ echo'<!DOCTYPE html>
 		<!-- Stylesheet For Announcements -->
 		<link rel="stylesheet" href="/assets/css/announce-style.css">
 		
-		<title>Employees Dashboard</title>
+		<title>Employees Page</title>
 		
 		<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 		
