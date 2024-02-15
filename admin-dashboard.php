@@ -1,13 +1,13 @@
 <?php
 require 'side.php';
-$select="SELECT * FROM employee";
-$query=mysqli_query($conn,$select) or die(mysqli_error($conn));
-$row=mysqli_fetch_assoc($query);
-$total=mysqli_num_rows($query);
-$leave="SELECT * FROM le";
-$lquery=mysqli_query($conn,$leave) or die(mysqli_error($conn));
-$total_leave=mysqli_num_rows($lquery);
-					echo'<!-- Widget -->
+$select = "SELECT * FROM employee";
+$query = mysqli_query($conn, $select) or die(mysqli_error($conn));
+$row = mysqli_fetch_assoc($query);
+$total = mysqli_num_rows($query);
+$leave = "SELECT * FROM le";
+$lquery = mysqli_query($conn, $leave) or die(mysqli_error($conn));
+$total_leave = mysqli_num_rows($lquery);
+echo '<!-- Widget -->
 						<div class="row">
 							<div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 col-12">
 								<div class="card dash-widget ctm-border-radius shadow-sm grow">
@@ -17,7 +17,7 @@ $total_leave=mysqli_num_rows($lquery);
 										</div>
 										<div class="card-right">
 											<h4 class="card-title">Employees</h4>
-											<p class="card-text">'.$total.'</p>
+											<p class="card-text">' . $total . '</p>
 										</div>
 									</div>
 								</div>
@@ -43,7 +43,7 @@ $total_leave=mysqli_num_rows($lquery);
 										</div>
 										<div class="card-right">
 											<h4 class="card-title">Leaves</h4>
-											<p class="card-text">'.$total_leave.'</p>
+											<p class="card-text">' . $total_leave . '</p>
 										</div>
 									</div>
 								</div>
@@ -56,11 +56,11 @@ $total_leave=mysqli_num_rows($lquery);
 										</div>
 										<div class="card-right">
 											<h4 class="card-title">Salary</h4>';
-                                      $tsalary = "SELECT SUM(salary) AS total_salary FROM employee";
+$tsalary = "SELECT SUM(salary) AS total_salary FROM employee";
 $tsalary_query = mysqli_query($conn, $tsalary);
 $ttt = mysqli_fetch_assoc($tsalary_query);
 $totalSalary = $ttt['total_salary'];
-											echo'<p class="card-text">$'.$totalSalary.'</p>
+echo '<p class="card-text">$' . $totalSalary . '</p>
 										</div>
 									</div>
 								</div>
@@ -102,26 +102,27 @@ $totalSalary = $ttt['total_salary'];
 								<a href="team-admin.php" class="dash-card float-right mb-0 text-primary">Manage Team
 								</a>
 							</div>';
-							$team = "SELECT * FROM team";
-                    $tquery = mysqli_query($conn, $team);
-                    if(mysqli_num_rows($tquery)>0){
-                    while ($row = mysqli_fetch_assoc($tquery)) {
-    $select = "SELECT * FROM employee WHERE id='" . $row['leader'] . "'";
-    $squery = mysqli_query($conn, $select);
-    $row_leader = mysqli_fetch_assoc($squery);
-    $file = $row_leader['file_name'];
-							echo'<div class="card-body">
+$team = "SELECT * FROM team";
+$tquery = mysqli_query($conn, $team);
+if (mysqli_num_rows($tquery) > 0) {
+	while ($row = mysqli_fetch_assoc($tquery)) {
+		$select = "SELECT * FROM employee WHERE id='" . $row['leader'] . "'";
+		$squery = mysqli_query($conn, $select);
+		$row_leader = mysqli_fetch_assoc($squery);
+		$file = $row_leader['file_name'];
+		echo '<div class="card-body">
 								<div class="media mb-3">
-									<div class="e-avatar avatar-online mr-3"><img src="images/'.$file.'"
-											alt="'.$row_leader['name'].'" class="img-fluid"></div>
+									<div class="e-avatar avatar-online mr-3"><img src="images/' . $file . '"
+											alt="' . $row_leader['name'] . '" class="img-fluid"></div>
 									<div class="media-body">
-										<h6 class="m-0">'.$row_leader['name'].'</h6>
-										<p class="mb-0 ctm-text-sm">'.$row['name'].'</p>
+										<h6 class="m-0">' . $row_leader['name'] . '</h6>
+										<p class="mb-0 ctm-text-sm">' . $row['name'] . '</p>
 									</div>
 								</div>
 								<hr></div>';
-							}}
-						echo'<div class="announcement-container">
+	}
+}
+echo '<div class="announcement-container">
  <div class="announcement-card">
   <div class="custom-btn btn-160"><span class="btn-label">Add Announcement</span></div>
   <form method="post" action="process.php" enctype="multipart/form-data" class="announcement-form">
@@ -180,4 +181,3 @@ $totalSalary = $ttt['total_salary'];
 
 </body>
 </html>';
-?>

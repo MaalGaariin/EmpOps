@@ -1,23 +1,23 @@
 <?php
 require 'assets/conn.php';
-$id=$_SESSION['emp_id'];
-$select="SELECT * FROM employee WHERE id ='$id'";
-$query=mysqli_query($conn,$select) or die(mysqli_error($conn));
-if(mysqli_num_rows($query)>0){
-	$row=mysqli_fetch_assoc($query);
+$id = $_SESSION['emp_id'];
+$select = "SELECT * FROM employee WHERE id ='$id'";
+$query = mysqli_query($conn, $select) or die(mysqli_error($conn));
+if (mysqli_num_rows($query) > 0) {
+    $row = mysqli_fetch_assoc($query);
 }
-if(isset($_POST['logout'])){
-session_destroy();
-	header('location:login.php');
-}
-$emp="SELECT * FROM employee";
-$emp_query=mysqli_query($conn,$emp) or die(mysqli_error($conn));
-$total=mysqli_num_rows($emp_query);
-if(!isset($_SESSION['emp_id'])){
+if (isset($_POST['logout'])) {
     session_destroy();
     header('location:login.php');
 }
-echo'<!DOCTYPE html>
+$emp = "SELECT * FROM employee";
+$emp_query = mysqli_query($conn, $emp) or die(mysqli_error($conn));
+$total = mysqli_num_rows($emp_query);
+if (!isset($_SESSION['emp_id'])) {
+    session_destroy();
+    header('location:login.php');
+}
+echo '<!DOCTYPE html>
 <html lang="en">
 <br><br>
 	<head>
@@ -97,7 +97,7 @@ echo'<!DOCTYPE html>
                                     <a href="javascript:void(0)" data-toggle="dropdown"
                                         class=" menu-style dropdown-toggle">
                                         <div class="user-avatar d-inline-block">
-                                            <img src="images/'.$row['file_name'].'" alt="user avatar"
+                                            <img src="images/' . $row['file_name'] . '" alt="user avatar"
                                                 class="rounded-circle img-fluid" width="55">
                                         </div>
                                     </a>
@@ -281,11 +281,11 @@ echo'<!DOCTYPE html>
 								<div class="user-card card shadow-sm bg-white text-center ctm-border-radius grow">
 									<div class="user-info card-body">
 										<div class="user-avatar mb-4">
-											<img src="images/'.$row['file_name'].'" alt="User Avatar" class="img-fluid rounded-circle" width="100">
+											<img src="images/' . $row['file_name'] . '" alt="User Avatar" class="img-fluid rounded-circle" width="100">
 										</div>
 										<div class="user-details">
-											<h4><b>Welcome '.$row['name'].'</b></h4>
-											<p>'.$_SESSION['emp_id'].'</p>
+											<h4><b>Welcome ' . $row['name'] . '</b></h4>
+											<p>' . $_SESSION['emp_id'] . '</p>
 										</div>
 									</div>
 								</div>
@@ -337,9 +337,9 @@ echo'<!DOCTYPE html>
 									</div>
 								</div>
 ';
-$attendance="SELECT * FROM attendance WHERE id ='$id'";
-  $attendance_query=mysqli_query($conn,$attendance);
-    echo'<h2>Attendance Records</h2>
+$attendance = "SELECT * FROM attendance WHERE employee_id ='$id'";
+$attendance_query = mysqli_query($conn, $attendance);
+echo '<h2>Attendance Records</h2>
     <table id="attendance-table">
         <thead>
             <tr>
@@ -351,22 +351,22 @@ $attendance="SELECT * FROM attendance WHERE id ='$id'";
             </tr>
         </thead>        <tbody id="attendance-data">
 ';
-        if(mysqli_num_rows($attendance_query)>0){
-            while ($row=mysqli_fetch_assoc($attendance_query)) {
-        echo'<tr>
-        <td>'.$row['employee_id'].'</td>
-       <td>'.$row['date'].'</td>
-        <td>'.$row['time'].'</td>
-        <td>'.$row['location'].'</td>
-        <td>'.$row['status'].'</td>
+if (mysqli_num_rows($attendance_query) > 0) {
+    while ($row = mysqli_fetch_assoc($attendance_query)) {
+        echo '<tr>
+        <td>' . $row['employee_id'] . '</td>
+       <td>' . $row['date'] . '</td>
+        <td>' . $row['time'] . '</td>
+        <td>' . $row['location'] . '</td>
+        <td>' . $row['status'] . '</td>
 
         </tr>';
-    }}else{
-        echo'<tr><td>There Is no such data.</td></tr>';
     }
-            echo'<!-- Attendance will be loaded here -->
+} else {
+    echo '<tr><td>There Is no such data.</td></tr>';
+}
+echo '<!-- Attendance will be loaded here -->
         </tbody>
     </table>
 </body>
     <script src="attendance_script.js"></script>';
-?>

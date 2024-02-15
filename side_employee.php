@@ -291,42 +291,59 @@ echo'<!DOCTYPE html>
 									</div>
 								</div>
 								
-								<!-- Sidebar -->
-								<div class="sidebar-wrapper d-lg-block d-md-none d-none">
-									<div class="card ctm-border-radius shadow-sm border-none grow">
-										<div class="card-body">
-											<div class="row no-gutters">
-												<div class="col-6 align-items-center text-center">
-													<a href="employees-dashboard.php" class="text-white active p-4 first-slider-btn ctm-border-right ctm-border-left ctm-border-top"><span class="lnr lnr-home pr-0 pb-lg-2 font-23"></span><span class="">Dashboard</span></a>												
-												</div>
-												
-												<div class="col-6 align-items-center shadow-none text-center">												
-													<a href="company.php" class="text-dark p-4 ctm-border-right ctm-border-left"><span class="lnr lnr-apartment pr-0 pb-lg-2 font-23"></span><span class=""> EMPOPS Company</span></a>												
-												</div>
-												<div class="col-6 align-items-center shadow-none text-center">												
-													<a href="calander.php" class="text-dark p-4 ctm-border-right"><span class="lnr lnr-calendar-full pr-0 pb-lg-2 font-23"></span><span class="">Calendar</span></a>												
-												</div>
-												<div class="col-6 align-items-center shadow-none text-center">											
-													<a href="settings.php" class="text-dark p-4 last-slider-btn1 ctm-border-right ctm-border-left"><span class="lnr lnr-cog pr-0 pb-lg-2 font-23"></span><span class="">Settings</span></a>												
-												</div>
-												<div class="col-6 align-items-center shadow-none text-center">											
-													<a href="details.php" class="text-dark p-4 last-slider-btn ctm-border-right"><span class="lnr lnr-user pr-0 pb-lg-2 font-23"></span><span class="">Profile</span></a>												
-												</div>
-																								<div class="col-6 align-items-center shadow-none text-center">											
+								<!-- Employee Dashboard Sidebar -->
+                                <div class="sidebar-wrapper d-lg-block d-md-none d-none">
+                                    <div class="card ctm-border-radius shadow-sm border-none grow">
+                                        <div class="card-body">
+                                            <div class="row no-gutters">
+                                                <div class="col-6 align-items-center text-center">
+                                                    <a href="employees-dashboard.php" class="text-white active p-4 first-slider-btn ctm-border-right ctm-border-left ctm-border-top">
+                                                        <span class="lnr lnr-home pr-0 pb-lg-2 font-23"></span><span class="">Dashboard</span>
+                                                    </a>                                               
+                                                </div>
+                                                
+                                                <div class="col-6 align-items-center shadow-none text-center">                                                
+                                                    <a href="company.php" class="text-dark p-4 ctm-border-right ctm-border-left">
+                                                        <span class="lnr lnr-apartment pr-0 pb-lg-2 font-23"></span><span class=""> EMPOPS Company</span>
+                                                    </a>                                                
+                                                </div>
+                                                <div class="col-6 align-items-center shadow-none text-center">                                                
+                                                    <a href="calander.php" class="text-dark p-4 ctm-border-right">
+                                                        <span class="lnr lnr-calendar-full pr-0 pb-lg-2 font-23"></span><span class="">Calendar</span>
+                                                    </a>                                                
+                                                </div>
+                                                <div class="col-6 align-items-center shadow-none text-center">                                          
+                                                    <a href="settings.php" class="text-dark p-4 last-slider-btn1 ctm-border-right ctm-border-left">
+                                                        <span class="lnr lnr-cog pr-0 pb-lg-2 font-23"></span><span class="">Settings</span>
+                                                    </a>                                                
+                                                </div>
+                                                <div class="col-6 align-items-center shadow-none text-center">                                          
+                                                    <a href="details.php" class="text-dark p-4 last-slider-btn ctm-border-right">
+                                                        <span class="lnr lnr-user pr-0 pb-lg-2 font-23"></span><span class="">Profile</span>
+                                                    </a>                                                
+                                                </div>
+                                                <div class="col-6 align-items-center shadow-none text-center">                                                
+                                                    <a href="attendance_employees.php" class="text-dark p-4 ctm-border-right ctm-border-left">
+                                                        <span class="lnr lnr-clock pr-0 pb-lg-2 font-23"></span><span class="">Attendance</span>
+                                                    </a>                                                
+                                                </div>
+                                                <div class="col-6 align-items-center shadow-none text-center">                                                
+                                                    <a href="announce.php" class="text-dark p-4 ctm-border-right ctm-border-left">
+                                                        <span class="lnr lnr-bullhorn pr-0 pb-lg-2 font-23"></span><span class="">Announcements</span>
+                                                    </a>                                                
+                                                </div>
+                                                <div class="col-6 align-items-center shadow-none text-center">                
+                                                    <a href="employee-logout.php" class="text-dark p-4 ctm-border-right ctm-border-left">
+                                                        <span class="lnr lnr-exit pr-0 pb-lg-2 font-23"></span><span class="">Log out</span>
+                                                    </a>   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /Employee Dashboard Sidebar -->
 
-												<a href="announce.php" class="text-dark p-4 last-slider-btn ctm-border-right"><span class="lnr lnr-user pr-0 pb-lg-2 font-23"></span><span class="">Announcements</span></a>												
-												</div>
 
-												<div class="col-6 align-items-center shadow-none text-center">				
-												<form method=post action"side_employee.php">
-													<button type="submit" name="logout" class="text-dark p-4 ctm-border-right ctm-border-left"><span class="lnr lnr-briefcase pr-0 pb-lg-2 font-23"></span><span class="">Log out</span></a>										</form>	
-													</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								
-								<!-- /Sidebar -->
 								
 								
 								

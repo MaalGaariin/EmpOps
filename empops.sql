@@ -167,8 +167,51 @@ CREATE TABLE `team` (
 --
 
 INSERT INTO `team` (`name`, `leader`, `id`) VALUES
-('PHPa', '1', 1),
-('Data base', '1', 2);
+('PHP', '1', 1),
+('Database', '1', 2);
+
+
+
+-- Create table structure for attendance
+CREATE TABLE `attendance` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `employee_id` int(10) unsigned NOT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  `location` enum('remote', 'office') NOT NULL,
+  `status` enum('present', 'late', 'absent', 'half-day', 'leave') NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Insert dummy attendance data for employee with ID 2
+INSERT INTO `attendance` (`employee_id`, `date`, `time`, `location`, `status`) VALUES
+(2, '2024-02-15', '08:00:00', 'office', 'present'),
+(2, '2024-02-14', '09:30:00', 'remote', 'present'),
+(2, '2024-02-13', '10:00:00', 'office', 'absent');
+
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `announcement`
+--
+
+CREATE TABLE `announcement` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `file` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `announcement`
+--
+
+INSERT INTO `announcement` (`title`, `content`, `file`) VALUES
+('Sample Announcement 1', 'This is the content of the first announcement.', 'sample_image1.jpg'),
+('Sample Announcement 2', 'This is the content of the second announcement.', 'sample_image2.jpg');
 
 --
 -- Indexes for dumped tables

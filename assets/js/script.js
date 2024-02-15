@@ -1,15 +1,16 @@
-(function () { "use strict";
+(function () {
+    "use strict";
     /*jslint browser: true*/
     /*global $, jQuery, alert*/
- // Defaultly Hiding sidebar Overlay
+    // Defaultly Hiding sidebar Overlay
     $("#sidebar_overlay").hide();
 
- // Tooltip
+    // Tooltip
 
     if ($('[data-toggle="tooltip"]').length > 0) {
         $('[data-toggle="tooltip"]').tooltip();
     }
- // Select 2
+    // Select 2
 
     if ($('.select').length > 0) {
         $('.select').select2({
@@ -17,7 +18,7 @@
             width: '100%'
         });
     }
- // Date Time Picker
+    // Date Time Picker
 
     if ($('.datetimepicker').length > 0) {
         $('.datetimepicker').datetimepicker({
@@ -34,10 +35,10 @@
     $(window).on('load', function () {
         $('#loader').delay(100).fadeOut('slow');
         $('#loader-wrapper').delay(500).fadeOut('slow');
-        $('body').delay(500).css({'overflow': 'visible'});
+        $('body').delay(500).css({ 'overflow': 'visible' });
     });
 
- //sidebar open and close
+    //sidebar open and close
     $(document).on('click', '#open_navSidebar', function () {
         $('#offcanvas_menu').css('width', '250px');
         $("#sidebar_overlay").show();
@@ -62,41 +63,41 @@
     if ($(window).width() > 767) {
         if ($('.theiaStickySidebar').length > 0) {
             $('.theiaStickySidebar').theiaStickySidebar({
-             // Settings
+                // Settings
                 additionalMarginTop: 20
             });
         }
     }
-    }());
+}());
 
-	// Inspect keyCode
+// Inspect keyCode
 
-	$( window ).on( "load", function() {
-		document.onkeydown = function(e) {
-			if(e.keyCode == 123) {
-			 return false;
-			}
-			if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
-			 return false;
-			}
-			if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
-			 return false;
-			}
-			if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
-			 return false;
-			}
-		
-			if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)){
-			 return false;
-			}      
-		 };
-		 
-	});
+$(window).on("load", function () {
+    document.onkeydown = function (e) {
+        if (e.keyCode == 123) {
+            return false;
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+            return false;
+        }
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+            return false;
+        }
+        if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+            return false;
+        }
 
-	document.oncontextmenu = function() {return false;};
-		$(document).mousedown(function(e){ 
-		if( e.button == 2 ) { 
-			return false; 
-		} 
-		return true; 
-	});
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+            return false;
+        }
+    };
+
+});
+
+document.oncontextmenu = function () { return false; };
+$(document).mousedown(function (e) {
+    if (e.button == 2) {
+        return false;
+    }
+    return true;
+});
