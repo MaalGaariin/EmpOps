@@ -37,40 +37,39 @@ echo'<!DOCTYPE html>
     </head>
 	<body>
 	<br><br>';
-$id = $_SESSION['admin_id'];
-$select = "SELECT * FROM admin WHERE id ='$id'";
-$query = mysqli_query($conn, $select) or die(mysqli_error($conn));
-if (mysqli_num_rows($query) > 0) {
-    $row = mysqli_fetch_assoc($query);
+$id=$_SESSION['admin_id'];
+$select="SELECT * FROM admin WHERE id ='$id'";
+$query=mysqli_query($conn,$select) or die(mysqli_error($conn));
+if(mysqli_num_rows($query)>0){
+    $row=mysqli_fetch_assoc($query);
 }
-if (isset($_POST['logout'])) {
+if(isset($_POST['logout'])){
+session_destroy();
+    header('location:login.php');
+}
+$emp="SELECT * FROM admin";
+$emp_query=mysqli_query($conn,$emp) or die(mysqli_error($conn));
+$total=mysqli_num_rows($emp_query);
+if(!isset($_SESSION['admin_id'])){
     session_destroy();
     header('location:login.php');
 }
-$emp = "SELECT * FROM admin";
-$emp_query = mysqli_query($conn, $emp) or die(mysqli_error($conn));
-$total = mysqli_num_rows($emp_query);
-if (!isset($_SESSION['admin_id'])) {
-    session_destroy();
-    header('location:login.php');
-}
-$select = "SELECT * FROM announcement ORDER BY id DESC";
-$query = mysqli_query($conn, $select) or die(mysqli_error($conn));
-if (mysqli_num_rows($query) > 0) {
-    while ($row = mysqli_fetch_assoc($query)) {
-        echo '<center><div class="announce-body">
+$select="SELECT * FROM announcement ORDER BY id DESC";
+$query=mysqli_query($conn,$select) or die(mysqli_error($conn));
+if(mysqli_num_rows($query)>0){
+    while($row=mysqli_fetch_assoc($query)){
+echo'<center><div class="announce-body">
         <div class="announce-card">
-            <img src="images/' . $row['file'] . '" alt="Another Logo" width="10%" height="20%">
-            <h3>' . $row['title'] . '</h3>
+            <img src="images/'.$row['file'].'" alt="Another Logo" width="10%" height="20%">
+            <h3>'.$row['title'].'</h3>
             <hr>
-            <p>' . $row['content'] . '</p>
+            <p>'.$row['content'].'</p>
             <form method="POST" action="process.php">
-            <input type="hidden" name="id" value="' . $row['id'] . '">
+            <input type="hidden" name="id" value="'.$row['id'].'">
             <button type="submit" class="delete-btn" name="delete_announce">Delete</button><br><br></form>
         </div>
     </div></center>';
-    }
-}
+}}
 
 echo '
 <!-- Inner Wrapper -->

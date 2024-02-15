@@ -1,4 +1,34 @@
 <?PHP
+echo'<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    
+    <!-- Linearicon Font -->
+    <link rel="stylesheet" href="assets/css/lnr-icon.css">
+        
+    <!-- Fontawesome CSS -->
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <title>Profile</title>
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.min.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+    
+  </head>
+  <body>';
 require 'side_employee.php';
 echo'						<div class="col-xl-9 col-lg-8  col-md-12">
 							<div class="quicklink-sidebar-menu ctm-border-radius shadow-sm grow bg-white p-4 mb-4 card">
