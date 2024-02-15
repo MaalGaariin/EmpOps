@@ -66,7 +66,7 @@ echo'<!DOCTYPE html>
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-3 col-sm-3 col-6">
                     <div class="logo my-3 my-sm-0">
-                        <a href="index.html">
+                        <a href="index.php">
                             <img src="assets/img/empops.png" alt="logo image" class="img-fluid" width="100">
                         </a>
                     </div>
@@ -161,7 +161,7 @@ echo'<!DOCTYPE html>
                             </div>
                             <hr>
                             <div class="user-menu-items px-3 m-0">
-                                <a class="px-0 pb-2 pt-0" href="index.html">
+                                <a class="px-0 pb-2 pt-0" href="index.php">
                                     <span class="media align-items-center">
                                         <span class="lnr lnr-home mr-3"></span>
                                         <span class="media-body text-truncate text-left">
