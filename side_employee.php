@@ -333,9 +333,12 @@ echo'<!DOCTYPE html>
                                                     </a>                                                
                                                 </div>
                                                 <div class="col-6 align-items-center shadow-none text-center">                
-                                                    <a href="side.php" class="text-dark p-4 ctm-border-right ctm-border-left">
-                                                        <span class="lnr lnr-exit pr-0 pb-lg-2 font-23"></span><span class="">Log out</span>
-                                                    </a>   
+                                                    <form method="POST" action="logout.php" class="text-dark p-4 ctm-border-right ctm-border-left">
+                                                        <button type="submit" name="logout" class="btn btn-link p-0 m-0">
+                                                            <span class="lnr lnr-exit pr-0 pb-lg-2 font-23"></span>
+                                                            <span class="">Log out</span>
+                                                        </button>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </div>

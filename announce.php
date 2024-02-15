@@ -4,6 +4,7 @@ require 'assets/conn.php';
 echo '<!DOCTYPE html>
 <html lang="en">
 <head>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,9 +23,10 @@ echo '<!DOCTYPE html>
             
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-    
+
     <!-- Stylesheet For Announcements -->
-    <link rel="stylesheet" href="/assets/css/announce-style.css">
+    <link rel="stylesheet" href="assets/css/announce-style.css">
+    
 
     <title>Announcement Dashboard</title>
     
@@ -61,14 +63,14 @@ $select = "SELECT * FROM announcement ORDER BY id DESC";
 $query = mysqli_query($conn, $select) or die(mysqli_error($conn));
 if (mysqli_num_rows($query) > 0) {
     while ($row = mysqli_fetch_assoc($query)) {
-        echo '<center><div class="announce-body">
-            <div class="announce-card">
+        echo '<center><div class="announce-body">';
+            echo '<div class="announce-card">
                 <img src="images/' . $row['file'] . '" alt="Another Logo" width="10%" height="20%">
                 <h3>' . $row['title'] . '</h3>
                 <hr>
                 <p>' . $row['content'] . '</p>
-            </div>
-        </div></center>';
+            </div>';
+        echo '</div></center>';
     }
 }
 

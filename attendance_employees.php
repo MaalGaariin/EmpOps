@@ -22,7 +22,9 @@ echo '<!DOCTYPE html>
 <html lang="en">
 <br><br>
 	<head>
-	
+
+    
+        <link rel="stylesheet" href="attendance_styles.css">
 		<!-- Required meta tags -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -63,7 +65,7 @@ echo '<!DOCTYPE html>
     <br><br>';
 $attendance = "SELECT * FROM attendance WHERE employee_id ='$id'";
 $attendance_query = mysqli_query($conn, $attendance);
-echo '<h2>Employee Attendance Records</h2>
+echo '<h2 style="color: white;">Employee Attendance Records</h2>
     <table id="attendance-table">
         <thead>
             <tr>

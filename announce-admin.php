@@ -4,7 +4,6 @@ require 'assets/conn.php';
 echo'<!DOCTYPE html>
 <html lang="en">
     <head>
-    <link rel="stylesheet" href="attendance_styles.css">
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,6 +22,9 @@ echo'<!DOCTYPE html>
                 
         <!-- Custom CSS -->
         <link rel="stylesheet" href="assets/css/style.css">
+
+        <!-- Stylesheet For Announcements -->
+        <link rel="stylesheet" href="assets/css/announce-style.css">
 
         
         <title>Announcement Page</title>
@@ -87,9 +89,7 @@ echo '
 <script src="assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js"></script>		
             
 <!-- Custom Js -->
-<script src="assets/js/script.js"></script>
-
-<script src="attendance_script.js"></script>';
+<script src="assets/js/script.js"></script>';
 echo '</body>
 </html>';
 ?>
