@@ -102,7 +102,7 @@ echo'<!DOCTYPE html>
                                                 class="rounded-circle img-fluid" width="55">
                                         </div>
                                     </a>
-
+                                    
                                     <!-- Notifications -->
                                     <div
                                         class="dropdown-menu notification-dropdown-menu shadow-lg border-0 p-3 m-0 dropdown-menu-right">
@@ -201,7 +201,7 @@ echo'<!DOCTYPE html>
                                         </span>
                                     </span>
                                 </a>
-
+                                
 
                                 <a class="p-2" href="settings.html">
                                     <span class="media align-items-center">
@@ -312,6 +312,11 @@ echo'<!DOCTYPE html>
 												<div class="col-6 align-items-center shadow-none text-center">											
 													<a href="details.php" class="text-dark p-4 last-slider-btn ctm-border-right"><span class="lnr lnr-user pr-0 pb-lg-2 font-23"></span><span class="">Profile</span></a>												
 												</div>
+																								<div class="col-6 align-items-center shadow-none text-center">											
+
+												<a href="announce.php" class="text-dark p-4 last-slider-btn ctm-border-right"><span class="lnr lnr-user pr-0 pb-lg-2 font-23"></span><span class="">Announcements</span></a>												
+												</div>
+
 												<div class="col-6 align-items-center shadow-none text-center">				
 												<form method=post action"side_employee.php">
 													<button type="submit" name="logout" class="text-dark p-4 ctm-border-right ctm-border-left"><span class="lnr lnr-briefcase pr-0 pb-lg-2 font-23"></span><span class="">Log out</span></a>										</form>	

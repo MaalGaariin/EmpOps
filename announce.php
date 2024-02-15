@@ -1,59 +1,69 @@
 <?php
-require 'side.php';
-echo'<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Announcements</title>
-    <link rel="stylesheet" href="/assets/css/announce-style.css">
-    <style>
-        .announce-card .edit-btn,
-        .announce-card .delete-btn {
-            max-width: 100%;
-            padding: 10px 20px;
-            margin-top: 10px;
-            border: none;
-            border-radius: 5px;
-            color: white;
-            cursor: pointer;
-        }
+require 'assets/conn.php';
+echo'<link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
+        
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        
+        <!-- Linearicon Font -->
+        <link rel="stylesheet" href="assets/css/lnr-icon.css">
+                
+        <!-- Fontawesome CSS -->
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+                
+        <!-- Custom CSS -->
 
-        .announce-card .edit-btn {
-            background-color: #4CAF50; /* Green */
+        <!-- Stylesheet For Announcements -->
+        <link rel="stylesheet" href="/assets/css/announce-style.css">
+        
+        <title>Employees Dashboard</title>
+        
+        <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <style>
+        .button{
+            display:inline-block;
+            padding:10px 20px;
+            background-color:yellow;
+            color:black;
+            text-decoration:none;
+            border-radius:4px;
         }
-
-        .announce-card .delete-btn {
-            background-color: #f44336; /* Red */
+        .button:hover{
+            background-color:blue;
         }
-
-        .announce-card .edit-btn:hover,
-        .announce-card .delete-btn:hover {
-            opacity: 0.6;
-        }
-    </style>
-</head>
-<body>';
-$select="SELECT * FROM announcement";
-$select_query=mysqli_query($conn,$select);
-if(mysqli_num_rows($select_query)>0){
-    while($row=mysqli_fetch_assoc($select_query)){
-    echo'<div class="announce-body">
+    </style>';
+$id=$_SESSION['emp_id'];
+$select="SELECT * FROM employee WHERE id ='$id'";
+$query=mysqli_query($conn,$select) or die(mysqli_error($conn));
+if(mysqli_num_rows($query)>0){
+    $row=mysqli_fetch_assoc($query);
+}
+if(isset($_POST['logout'])){
+session_destroy();
+    header('location:login.php');
+}
+$emp="SELECT * FROM employee";
+$emp_query=mysqli_query($conn,$emp) or die(mysqli_error($conn));
+$total=mysqli_num_rows($emp_query);
+if(!isset($_SESSION['emp_id'])){
+    session_destroy();
+    header('location:login.php');
+}
+echo'<a href="employees-dashboard.php"class="button">Back To Your DashBoard</a>';
+$select="SELECT * FROM announcement ORDER BY id DESC";
+$query=mysqli_query($conn,$select) or die(mysqli_error($conn));
+if(mysqli_num_rows($query)>0){
+    while($row=mysqli_fetch_assoc($query)){
+echo'<center><div class="announce-body">
         <div class="announce-card">
-            <img src="images/'.$row['file'].'" alt="empops Logo">
-            <h3>
-                '.$row['title'].'
-            </h3>
+            <img src="images/'.$row['file'].'" alt="Another Logo" width="10%" height="20%">
+            <h3>'.$row['title'].'</h3>
             <hr>
-            <p>
-             '.$row['content'].'
-            </p>
-            <form method="post" action="process.php">
-            <input type ="hidden" name="title" value="'.$row['title'].'">
-            <button type="submit" name="delete" class="delete-btn">Delete</button></form>
+            <p>'.$row['content'].'</p>
+            
         </div>
-    </div>';
-    }}
+    </div></center>';
+}}
 echo'</body>
 
 </html>';

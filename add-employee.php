@@ -1,5 +1,5 @@
 <?php
-require 'assets/conn.php';
+require 'assets\conn.php';
 $id=$_SESSION['admin_id'];
 $select="SELECT * FROM admin WHERE id ='$id'";
 $query=mysqli_query($conn,$select) or die(mysqli_error($conn));

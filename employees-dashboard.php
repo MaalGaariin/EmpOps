@@ -100,18 +100,6 @@ body {
 		</div>";
                                        for ($i = 1; $i <= $totalPages; $i++) {
 echo "<a href='employees-dashboard.php?page=$i'>$i</a>";}
-echo'<center><h2>Announcement Dash Board</h2></center>';
-		$announce="SELECT * FROM announcement";
-		$announce_quey=mysqli_query($conn,$announce);
-		if(mysqli_num_rows($announce_quey)>0){
-			while($row=mysqli_fetch_assoc($announce_quey)){
-          echo'<div class="employee-container">
-        <div class="employee-card">
-            <img src="images/'.$row['file'].'" width="20px" height="20px" alt="Employee 1">
-            <div class="info">
-                <h5>'.$row['content'].'</h5>
-            </div>
-        </div></div>';}}
 		echo'<div class="sidebar-overlay" id="sidebar_overlay"></div>
 			
 		<!-- jQuery -->
