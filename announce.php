@@ -1,6 +1,6 @@
 <?php
-require 'side_employee.php';
 require 'assets/conn.php';
+require 'side_employee.php';
 echo '<!DOCTYPE html>
 <html lang="en">
 <head>
